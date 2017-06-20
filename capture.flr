@@ -2,10 +2,10 @@
 // https://sites.google.com/a/coherentknowledge.com/tutorial-capturing-real-world-knowledge/home
 
 
-// root class: Thing	// вещь
+// root class: Thing					// вещь
 
-Event :: Thing.			// событие a kind of вещи
-Entity :: Thing.		// сущность ako вещь
+Event :: Thing.							// событие a kind of вещи
+Entity :: Thing.						// сущность ako вещь
 
 {DrivingSituation,Action} :: Event.		// ситуация вождения, действие: события
 DrivingEntity :: Entity.				// сущность управления
@@ -18,4 +18,9 @@ IllegalDrive :: Drive.					// неправильное управление
 // domain: Action
 // value range: Entity
 Action[| agent => Entity |].			// agent function maps action => entity
+
+Event [|
+	participant => Entity,				// участник события
+	follows => Event					// связь событий, следует за...
+|].
 
