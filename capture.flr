@@ -11,4 +11,6 @@ Entity :: Thing.		// сущность ako вещь
 DrivingEntity :: Entity.				// сущность управления
 SpatialEntity :: Entity.				// пространственная сущность
 
+Drive::Action.							// управление ako действие
+IllegalDrive::Drive.					// неправильное управление
 
