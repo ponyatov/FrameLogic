@@ -11,6 +11,11 @@ Entity :: Thing.		// сущность ako вещь
 DrivingEntity :: Entity.				// сущность управления
 SpatialEntity :: Entity.				// пространственная сущность
 
-Drive::Action.							// управление ako действие
-IllegalDrive::Drive.					// неправильное управление
+Drive :: Action.						// управление ako действие
+IllegalDrive :: Drive.					// неправильное управление
+
+// property: agent
+// domain: Action
+// value range: Entity
+Action[| agent => Entity |].			// agent function maps action => entity
 
