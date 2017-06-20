@@ -24,3 +24,7 @@ Event [|
 	follows => Event					// св€зь событий, следует за...
 |].
 
+DrivingSituation[|						// в случае ситуации управлени€
+	rightOfWay => DrivingEntity|].		// приоритет задан дл€ участника движени€
+
+
