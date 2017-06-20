@@ -2,6 +2,9 @@
 // https://sites.google.com/a/coherentknowledge.com/tutorial-capturing-real-world-knowledge/home
 
 
-// root class: Thing
+// root class: Thing	// вещь
+
+Event :: Thing.			// событие
+Entity :: Thing.		// сущность
 
 
