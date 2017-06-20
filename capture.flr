@@ -4,7 +4,11 @@
 
 // root class: Thing	// вещь
 
-Event :: Thing.			// событие
-Entity :: Thing.		// сущность
+Event :: Thing.			// событие a kind of вещи
+Entity :: Thing.		// сущность ako вещь
+
+{DrivingSituation,Action} :: Event.		// ситуация вождения, действие: события
+DrivingEntity :: Entity.				// сущность управления
+SpatialEntity :: Entity.				// пространственная сущность
 
 
