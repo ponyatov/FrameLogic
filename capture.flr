@@ -1,6 +1,14 @@
 // Tutorial: Capturing Real World Knowledge in Ergo/Flora
 // https://sites.google.com/a/coherentknowledge.com/tutorial-capturing-real-world-knowledge/home
 
+// @!{rule_id}
+// ?Variable переменная  ?_Var переменная для которой не важно ее значение
+// blablabla :- bebebe	blablabla при условии что, такая что bebebe
+// -> имеет значение, is-a, isa
+// => имеет тип результата, отображает в тип, ex: fn_main => int
+// A:B	 A имеет тип B, ex: main:function => int
+// A::B  А подкласс B, A вид B, a kind of, ako
+
 
 // root class: Thing					// вещь
 
@@ -27,4 +35,18 @@ Event [|
 DrivingSituation[|						// в случае ситуации управления
 	rightOfWay => DrivingEntity|].		// приоритет задан для участника движения
 
+// функциональное определение неправильного вождения:
+// если сущности E1,E1->Entity участвуют
+// в ситуации вождения S->DrivingSituation в которой E2 имеет приоритет
+// но E1 движется первым, то движение E1 нарушает правила
+
+@!{illegal_drive}		// rule id
+?D:IllegalDrive :-		// var D типа IllegalDrive такая что:-
+	// движение D агента-сущности E1, следущем за ситуацией управления S
+	?D:Drive[agent->?E1:Entity, follows->?S:DrivingSituation],
+	// в ситуации когда из участников E1,E2 приоритет имеет E2
+	?S[participant -> {?E1,?E2}, rightOfWay -> ?E2:Entity],
+	// c запретом сингулярности когда E1,E2 одна и та же сущность
+	?E1 != ?E2
+.
 
