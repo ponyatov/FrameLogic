@@ -2,25 +2,25 @@
 // https://sites.google.com/a/coherentknowledge.com/tutorial-capturing-real-world-knowledge/home
 
 // @!{rule_id}
-// ?Variable ïåðåìåííàÿ  ?_Var ïåðåìåííàÿ äëÿ êîòîðîé íå âàæíî åå çíà÷åíèå
-// blablabla :- bebebe	blablabla ïðè óñëîâèè ÷òî, òàêàÿ ÷òî bebebe
-// -> èìååò çíà÷åíèå, is-a, isa
-// => èìååò òèï ðåçóëüòàòà, îòîáðàæàåò â òèï, ex: fn_main => int
-// A:B	 A èìååò òèï B, ex: main:function => int
-// A::B  À ïîäêëàññ B, A âèä B, a kind of, ako
+// ?Variable Ð¿ÐµÑ€ÐµÐ¼ÐµÐ½Ð½Ð°Ñ  ?_Var Ð¿ÐµÑ€ÐµÐ¼ÐµÐ½Ð½Ð°Ñ Ð´Ð»Ñ ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð¹ Ð½Ðµ Ð²Ð°Ð¶Ð½Ð¾ ÐµÐµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ
+// blablabla :- bebebe	blablabla Ð¿Ñ€Ð¸ ÑƒÑÐ»Ð¾Ð²Ð¸Ð¸ Ñ‡Ñ‚Ð¾, Ñ‚Ð°ÐºÐ°Ñ Ñ‡Ñ‚Ð¾ bebebe
+// -> Ð¸Ð¼ÐµÐµÑ‚ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ, is-a, isa
+// => Ð¸Ð¼ÐµÐµÑ‚ Ñ‚Ð¸Ð¿ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ð°, Ð¾Ñ‚Ð¾Ð±Ñ€Ð°Ð¶Ð°ÐµÑ‚ Ð² Ñ‚Ð¸Ð¿, ex: fn_main => int
+// A:B	 A Ð¸Ð¼ÐµÐµÑ‚ Ñ‚Ð¸Ð¿ B, ex: main:function => int
+// A::B  Ð Ð¿Ð¾Ð´ÐºÐ»Ð°ÑÑ B, A Ð²Ð¸Ð´ B, a kind of, ako
 
 
-// root class: Thing					// âåùü
+// root class: Thing					// Ð²ÐµÑ‰ÑŒ
 
-Event :: Thing.							// ñîáûòèå a kind of âåùè
-Entity :: Thing.						// ñóùíîñòü ako âåùü
+Event :: Thing.							// ÑÐ¾Ð±Ñ‹Ñ‚Ð¸Ðµ a kind of Ð²ÐµÑ‰Ð¸
+Entity :: Thing.						// ÑÑƒÑ‰Ð½Ð¾ÑÑ‚ÑŒ ako Ð²ÐµÑ‰ÑŒ
 
-{DrivingSituation,Action} :: Event.		// ñèòóàöèÿ âîæäåíèÿ, äåéñòâèå: ñîáûòèÿ
-DrivingEntity :: Entity.				// ñóùíîñòü óïðàâëåíèÿ
-SpatialEntity :: Entity.				// ïðîñòðàíñòâåííàÿ ñóùíîñòü
+{DrivingSituation,Action} :: Event.		// ÑÐ¸Ñ‚ÑƒÐ°Ñ†Ð¸Ñ Ð²Ð¾Ð¶Ð´ÐµÐ½Ð¸Ñ, Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ: ÑÐ¾Ð±Ñ‹Ñ‚Ð¸Ñ
+DrivingEntity :: Entity.				// ÑÑƒÑ‰Ð½Ð¾ÑÑ‚ÑŒ ÑƒÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ñ
+SpatialEntity :: Entity.				// Ð¿Ñ€Ð¾ÑÑ‚Ñ€Ð°Ð½ÑÑ‚Ð²ÐµÐ½Ð½Ð°Ñ ÑÑƒÑ‰Ð½Ð¾ÑÑ‚ÑŒ
 
-Drive :: Action.						// óïðàâëåíèå ako äåéñòâèå
-IllegalDrive :: Drive.					// íåïðàâèëüíîå óïðàâëåíèå
+Drive :: Action.						// ÑƒÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ ako Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ
+IllegalDrive :: Drive.					// Ð½ÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾Ðµ ÑƒÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ
 
 // property: agent
 // domain: Action
@@ -28,25 +28,25 @@ IllegalDrive :: Drive.					// íåïðàâèëüíîå óïðàâëåíèå
 Action[| agent => Entity |].			// agent function maps action => entity
 
 Event [|
-	participant => Entity,				// ó÷àñòíèê ñîáûòèÿ
-	follows => Event					// ñâÿçü ñîáûòèé, ñëåäóåò çà...
+	participant => Entity,				// ÑƒÑ‡Ð°ÑÑ‚Ð½Ð¸Ðº ÑÐ¾Ð±Ñ‹Ñ‚Ð¸Ñ
+	follows => Event					// ÑÐ²ÑÐ·ÑŒ ÑÐ¾Ð±Ñ‹Ñ‚Ð¸Ð¹, ÑÐ»ÐµÐ´ÑƒÐµÑ‚ Ð·Ð°...
 |].
 
-DrivingSituation[|						// â ñëó÷àå ñèòóàöèè óïðàâëåíèÿ
-	rightOfWay => DrivingEntity|].		// ïðèîðèòåò çàäàí äëÿ ó÷àñòíèêà äâèæåíèÿ
+DrivingSituation[|						// Ð² ÑÐ»ÑƒÑ‡Ð°Ðµ ÑÐ¸Ñ‚ÑƒÐ°Ñ†Ð¸Ð¸ ÑƒÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ñ
+	rightOfWay => DrivingEntity|].		// Ð¿Ñ€Ð¸Ð¾Ñ€Ð¸Ñ‚ÐµÑ‚ Ð·Ð°Ð´Ð°Ð½ Ð´Ð»Ñ ÑƒÑ‡Ð°ÑÑ‚Ð½Ð¸ÐºÐ° Ð´Ð²Ð¸Ð¶ÐµÐ½Ð¸Ñ
 
-// ôóíêöèîíàëüíîå îïðåäåëåíèå íåïðàâèëüíîãî âîæäåíèÿ:
-// åñëè ñóùíîñòè {E1,E1}:Entity ó÷àñòâóþò
-// â ñèòóàöèè âîæäåíèÿ S->DrivingSituation â êîòîðîé E2 èìååò ïðèîðèòåò
-// íî E1 äâèæåòñÿ ïåðâûì, òî äâèæåíèå E1 íàðóøàåò ïðàâèëà
+// Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¾Ð½Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÐµÐ½Ð¸Ðµ Ð½ÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾Ð³Ð¾ Ð²Ð¾Ð¶Ð´ÐµÐ½Ð¸Ñ:
+// ÐµÑÐ»Ð¸ ÑÑƒÑ‰Ð½Ð¾ÑÑ‚Ð¸ {E1,E1}:Entity ÑƒÑ‡Ð°ÑÑ‚Ð²ÑƒÑŽÑ‚
+// Ð² ÑÐ¸Ñ‚ÑƒÐ°Ñ†Ð¸Ð¸ Ð²Ð¾Ð¶Ð´ÐµÐ½Ð¸Ñ S->DrivingSituation Ð² ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð¹ E2 Ð¸Ð¼ÐµÐµÑ‚ Ð¿Ñ€Ð¸Ð¾Ñ€Ð¸Ñ‚ÐµÑ‚
+// Ð½Ð¾ E1 Ð´Ð²Ð¸Ð¶ÐµÑ‚ÑÑ Ð¿ÐµÑ€Ð²Ñ‹Ð¼, Ñ‚Ð¾ Ð´Ð²Ð¸Ð¶ÐµÐ½Ð¸Ðµ E1 Ð½Ð°Ñ€ÑƒÑˆÐ°ÐµÑ‚ Ð¿Ñ€Ð°Ð²Ð¸Ð»Ð°
 
 @!{illegal_drive}		// rule id
-?D:IllegalDrive :-		// var D òèïà IllegalDrive òàêàÿ ÷òî:-
-	// äâèæåíèå D àãåíòà-ñóùíîñòè E1, ñëåäóùåì çà ñèòóàöèåé óïðàâëåíèÿ S
+?D:IllegalDrive :-		// var D Ñ‚Ð¸Ð¿Ð° IllegalDrive Ñ‚Ð°ÐºÐ°Ñ Ñ‡Ñ‚Ð¾:-
+	// Ð´Ð²Ð¸Ð¶ÐµÐ½Ð¸Ðµ D Ð°Ð³ÐµÐ½Ñ‚Ð°-ÑÑƒÑ‰Ð½Ð¾ÑÑ‚Ð¸ E1, ÑÐ»ÐµÐ´ÑƒÑ‰ÐµÐ¼ Ð·Ð° ÑÐ¸Ñ‚ÑƒÐ°Ñ†Ð¸ÐµÐ¹ ÑƒÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ñ S
 	?D:Drive[agent->?E1:Entity, follows->?S:DrivingSituation],
-	// â ñèòóàöèè êîãäà èç ó÷àñòíèêîâ E1,E2 ïðèîðèòåò èìååò E2
+	// Ð² ÑÐ¸Ñ‚ÑƒÐ°Ñ†Ð¸Ð¸ ÐºÐ¾Ð³Ð´Ð° Ð¸Ð· ÑƒÑ‡Ð°ÑÑ‚Ð½Ð¸ÐºÐ¾Ð² E1,E2 Ð¿Ñ€Ð¸Ð¾Ñ€Ð¸Ñ‚ÐµÑ‚ Ð¸Ð¼ÐµÐµÑ‚ E2
 	?S[participant -> {?E1,?E2}, rightOfWay -> ?E2:Entity],
-	// c çàïðåòîì ñèíãóëÿðíîñòè êîãäà E1,E2 îäíà è òà æå ñóùíîñòü
+	// c Ð·Ð°Ð¿Ñ€ÐµÑ‚Ð¾Ð¼ ÑÐ¸Ð½Ð³ÑƒÐ»ÑÑ€Ð½Ð¾ÑÑ‚Ð¸ ÐºÐ¾Ð³Ð´Ð° E1,E2 Ð¾Ð´Ð½Ð° Ð¸ Ñ‚Ð° Ð¶Ðµ ÑÑƒÑ‰Ð½Ð¾ÑÑ‚ÑŒ
 	?E1 != ?E2
 .
 
@@ -58,5 +58,6 @@ S1 : DrivingSituation [participant -> {P1,P2}, rightOfWay -> P2].
 // assert query: D1:IllegalDrive
 // or search illegal drivers by query
 ?- ?Who:IllegalDrive.
+
 
 
