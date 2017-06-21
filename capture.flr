@@ -36,7 +36,7 @@ DrivingSituation[|						// в случае ситуации управлени€
 	rightOfWay => DrivingEntity|].		// приоритет задан дл€ участника движени€
 
 // функциональное определение неправильного вождени€:
-// если сущности E1,E1->Entity участвуют
+// если сущности {E1,E1}:Entity участвуют
 // в ситуации вождени€ S->DrivingSituation в которой E2 имеет приоритет
 // но E1 движетс€ первым, то движение E1 нарушает правила
 
@@ -49,4 +49,14 @@ DrivingSituation[|						// в случае ситуации управлени€
 	// c запретом сингул€рности когда E1,E2 одна и та же сущность
 	?E1 != ?E2
 .
+
+// test illegal_drive, mock up actors/situation
+P1 : DrivingEntity.
+P2 : DrivingEntity.
+D1 : Drive [agent -> P1, follows -> S1].
+S1 : DrivingSituation [participant -> {P1,P2}, rightOfWay -> P2].
+// assert query: D1:IllegalDrive
+// or search illegal drivers by query
+?- ?Who:IllegalDrive.
+
 
