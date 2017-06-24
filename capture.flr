@@ -57,7 +57,7 @@ D1 : Drive [agent -> P1, follows -> S1].
 S1 : DrivingSituation [participant -> {P1,P2}, rightOfWay -> P2].
 // assert query: D1:IllegalDrive
 // or search illegal drivers by query
-?- ?Who:IllegalDrive.
+?- ?IllegalDriver:IllegalDrive.
 
 
 
