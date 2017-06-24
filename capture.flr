@@ -2,7 +2,9 @@
 // https://sites.google.com/a/coherentknowledge.com/tutorial-capturing-real-world-knowledge/home
 
 // @!{rule_id}
-// ?Variable переменная  ?_Var переменная для которой не важно ее значение
+// ?Variable переменная
+// ?_Var переменная для которой не важно ее значение
+// ? анонимная переменная
 // blablabla :- bebebe	blablabla при условии что, такая что bebebe
 // -> имеет значение, is-a, isa
 // => имеет тип результата, отображает в тип, ex: fn_main => int
@@ -59,5 +61,18 @@ S1 : DrivingSituation [participant -> {P1,P2}, rightOfWay -> P2].
 // or search illegal drivers by query
 ?- ?IllegalDriver:IllegalDrive.
 
+// безопасное вождение -- частный случай вождения
+SafeDrive :: Drive.
+// если сущность E участвует в ситуации вождения S 
+@!{right_of_way_safe_drive}
+?S [ rightOfWay -> ?E ] :-		// ситуация S с приоритетом у участника E если:
+	// S - ситуация вождения с участником E
+	?S : DrivingSituation[participant -> ?E],
+	// E - участник движения
+	?E : DrivingEntity,
+	// если  за ситуацией следует безопасное вождение выполняемое этим E
+	? : SafeDrive[follows -> ?S, agent -> ?E].
 
-
+// тестируем условие безопасного вождения
+S2:DrivingSituation [participant -> P3:DrivingEntity].	// ситуация с участником P3
+D2: SafeDrive[ follows -> S2, agent -> P3].				// и безопасным вождением
