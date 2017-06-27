@@ -76,3 +76,26 @@ SafeDrive :: Drive.
 // тестируем условие безопасного вождения
 S2:DrivingSituation [participant -> P3:DrivingEntity].	// ситуация с участником P3
 D2: SafeDrive[ follows -> S2, agent -> P3].				// и безопасным вождением
+?- S2 [rightOfWay->?HasRoW].							// кто имеет право проезда ?
+
+Person :: Entity.						// человек, лицо ako сущность
+Pedestrian :: Person.					// пешеход вид лица
+Bicyclist :: {DrivingEntity, Person}.	// велосипедист :: участник движения, лицо
+MotorCyclist :: {DrivingEntity, Person}. // мотоциклист
+Motorist :: {DrivingEntity, Person}.	// автомобилист
+
+Car :: DrivingEntity.					// машина :: участник движения
+
+{CrossWalk, StreetCorner} :: SpatialEntity.	// переход, угол улицы :: пространственные сущности
+TrafficSign :: SpatialEntity.				// дорожный знак :: пространственная сущность
+{StopSign, TrafficSignal} :: TrafficSign.	// стоп-знак, сигнал светофора :: дорожный знак
+
+FailToStopAtTrafficSign :: IllegalDrive.	// ошибка при остановке у знака
+Speeding :: IllegalDrive.					// ускорение :: неправильное вождение
+MakingIlliegalTurn :: IllegalDrive.			// неправильный поворот
+UnsafeLaneChange :: IllegalDrive.			// опасная смена полосы
+
+// свойство нарушение права проезда
+// значение сущность, домен вождение
+Drive :: Action[|violatesRightOfWay => Entity|].
+
