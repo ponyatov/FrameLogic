@@ -117,3 +117,12 @@ I1 : FailToStopAtTrafficSign[agent -> P4, follows -> S3].
 // поиск участника с нарушенным правом проезда = P5
 ?- I1[violatesRightOfWay -> ?x].
 
+@!{right_of_way_pedestrian}
+// право движения пищехода
+?S[rightOfWay -> ?P] :-
+// локация пешеходный переход или перекресток
+(?C:CrossWalk \or ?C:StreetCorner),
+// в ситуации S в локации C с участником-пешеходом P
+?S:DrivingSituation[location -> ?C, participant -> ?P:Pedestrian].
+
+// тест ситуации с пешеходом
