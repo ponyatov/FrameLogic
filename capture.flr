@@ -99,3 +99,21 @@ UnsafeLaneChange :: IllegalDrive.			// опасная смена полосы
 // значение сущность, домен вождение
 Drive :: Action[|violatesRightOfWay => Entity|].
 
+@!{violates_ROW}
+// неправильное вождение I нарушает право проезда Q если
+?I[violatesRightOfWay -> ?Q] :-
+// в ситуации вождения с участниками P,Q
+?S : DrivingSituation[participant -> {?P,?Q}:Entity],
+// агент P совершает неправильное вождение I в ситуации S
+?I : IllegalDrive[agent -> ?P, follows -> ?S],
+// запрет совпадения участников
+?P != ?Q.
+
+// тест violates_ROW
+// ситуация с участниками
+S3 : DrivingSituation[participant -> {P4,P5}:Person].
+// невозможность остановки на знаке агента P4	
+I1 : FailToStopAtTrafficSign[agent -> P4, follows -> S3].
+// поиск участника с нарушенным правом проезда = P5
+?- I1[violatesRightOfWay -> ?x].
+
