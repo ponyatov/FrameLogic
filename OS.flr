@@ -1,2 +1,37 @@
 // Operational Systems specification
 
+Windows::OS.
+UNIX::OS.
+Linux::UNIX.
+AIX::UNIX.
+Solaris::UNIX.
+HPUX::UNIX.
+MacOS::UNIX.
+DOS::OS.
+WinCE::Windows[embedded,mobile].
+Android::Linux[embedded,mobile].
+Symbian::OS[embedded,mobile].
+BADA::OS[embedded,mobile].
+
+// Std.libs
+
+GUILibrary::Library.
+Library3D::Library.
+
+WINAPI::{Library[os=>Windows],GUILibrary}.
+GDI::WINAPI.
+TWAIN::WINAPI.
+
+DirectX::Library3D[os=>Windows].
+OpenGL::Library3D[os=>{Windows,Linux}].
+
+libc::Library.
+uClibc::libc.
+bionic::libc[os=Android].
+dieltlibc::libc.
+
+libSDL::Library.
+libSDL2::libSDL.
+
+wxWindows::GUILibrary.
+libQt::{Library,GUILibrary}.
