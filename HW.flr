@@ -1,0 +1,7 @@
+// hardware platforms specification
+
+IntelArchitecture :: Architecture.
+x86::IntelArchitecture.
+x86_64::x86.
+amd64::x86_64.
+i386::x86.
