@@ -12,26 +12,46 @@ WinCE::Windows[embedded,mobile].
 Android::Linux[embedded,mobile].
 Symbian::OS[embedded,mobile].
 BADA::OS[embedded,mobile].
+Big3:{Windows,Linux,MacOS}.
+
+// Linux distro variants
+
+Debian::Linux.
+Ubuntu::Linux.
+Fedora::Linux.
+SuSE::Linux.
+RedHat::Linux.
+LFS::Linux.
 
 // Std.libs
 
-GUILibrary::Library.
-Library3D::Library.
+GraphicsLibrary::Library.
+GUILibrary::GraphicsLibrary.
+Framework::{Library,GUILibrary}.
+GameFramework::Framework.
 
-WINAPI::{Library[os=>Windows],GUILibrary}.
+WINAPI::Framework[os=>Windows].
 GDI::WINAPI.
 TWAIN::WINAPI.
 
+Library3D::GameFramework.
 DirectX::Library3D[os=>Windows].
 OpenGL::Library3D[os=>{Windows,Linux}].
+OpenGLES::OpenGL[mobile].
 
 libc::Library.
+glibc::libc.
 uClibc::libc.
 bionic::libc[os=Android].
 dieltlibc::libc.
 
-libSDL::Library.
+libSDL::GameFramework.
 libSDL2::libSDL.
 
-wxWindows::GUILibrary.
-libQt::{Library,GUILibrary}.
+wxWindows::Framework[os=>Big3].
+Qt::Framework[os=>Big3].
+libQt::Qt.
+GTK::Framework[os=>Big3].
+{libGTK,'GTK+'}::GTK.
+
+{GNOME,KDE,FLTK,XWindow}::Framework[os=UNIX].
