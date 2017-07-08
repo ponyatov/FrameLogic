@@ -14,6 +14,10 @@ C11			:: C.					// ISO/IEC 9899:2011
 
 'C++98'		:: 'C++'.				// ISO/IEC 14882:1998
 'ANSI C++'	:: 'C++98'.
+'C++2003'	:: 'C++'.				// ISO/IEC 14882:2003
+'C++09'		:: 'C++'.
 'C++0x'		:: 'C++'.
 'C++11'		:: 'C++'.
 
+{char,int,float,double}::type.
+{vector,map,queue,deque,stack}::container[in=>'C++'].
