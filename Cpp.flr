@@ -1,0 +1,16 @@
+// C(++) programming language specification
+// syntax, semantics, compilers, tools, std.libs
+
+ProgrammingLanguage :: Language.
+
+C :: ProgrammingLanguage.			// pure C
+'C++' :: C.							// C++ variants
+
+C89 :: C.					// ANSI X3.159-1989
+'ANSI C' :: C89.
+C90 :: C.					// ISO/IEC 9899:1990
+C99 :: C.					// ISO/IEC 9899:1999
+C11 :: C.					// ISO/IEC 9899:2011
+
+'C++11' :: 'C++'.
+'ANSI C++' :: 
