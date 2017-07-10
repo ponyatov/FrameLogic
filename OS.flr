@@ -22,7 +22,7 @@ Symbian::RTOS[mobile].
 
 // Linux distro variants
 
-{Debian,Ubuntu::Debian,Fedora,SuSE,RedHat,LFS}::Linux.
+{Debian,Ubuntu::Debian,Fedora,SuSE,RedHat,Angstrom,LFS}::Linux.
 
 // Std.libs
 
