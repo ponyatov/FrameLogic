@@ -1,27 +1,28 @@
 // Operational Systems specification
 
-Windows::OS.
+RTOS::OS[embedded].
 UNIX::OS.
+
+Windows::OS.
 Linux::UNIX.
+MacOS::UNIX.
+Big3:{Windows,Linux,MacOS}.
+
 AIX::UNIX.
 Solaris::UNIX.
 HPUX::UNIX.
-MacOS::UNIX.
-DOS::OS.
+DOS::{embedded,OS}.
 WinCE::Windows[embedded,mobile].
 Android::Linux[embedded,mobile].
 Symbian::OS[embedded,mobile].
 BADA::OS[embedded,mobile].
-Big3:{Windows,Linux,MacOS}.
+QNX::{UNIX,RTOS}.
+FreeRTOS::RTOS.
+Symbian::RTOS[mobile].
 
 // Linux distro variants
 
-Debian::Linux.
-Ubuntu::Linux.
-Fedora::Linux.
-SuSE::Linux.
-RedHat::Linux.
-LFS::Linux.
+{Debian,Ubuntu::Debian,Fedora,SuSE,RedHat,LFS}::Linux.
 
 // Std.libs
 
