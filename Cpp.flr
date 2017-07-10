@@ -11,6 +11,7 @@ C89			:: C.					// ANSI X3.159-1989
 C90			:: C.					// ISO/IEC 9899:1990
 C99			:: C.					// ISO/IEC 9899:1999
 C11			:: C.					// ISO/IEC 9899:2011
+C1X			:: C11.
 
 'C++98'		:: 'C++'.				// ISO/IEC 14882:1998
 'ANSI C++'	:: 'C++98'.
@@ -19,5 +20,20 @@ C11			:: C.					// ISO/IEC 9899:2011
 'C++0x'		:: 'C++'.
 'C++11'		:: 'C++'.
 
-{char,int,float,double}::type.
-{vector,map,queue,deque,stack}::container[in=>'C++'].
+gcc:compiler[lang={C,'C++'},vendor=GNU].
+cl:compiler[lang={C,'C++'},vendor=Microsoft].
+
+type[char,int,float].
+typemod[signed,unsigned,short,long,array,ptr].
+double :- long[float].
+
+{for,while}:loop.
+{loop,if}:statement.
+
+C[var,type,function,include,module,statement,block].
+'C++'[class,container].
+container[vector,map,queue,deque,stack].
+
+?X[?Z] :- ?X::?_Y[?Z].
+
+Program[main:function[args->{argc:int,argv:array[ptr[array[char]]]}]=>int].
