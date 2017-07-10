@@ -49,6 +49,12 @@ Turion::AMDCPU.
 
 AVR::Architecture[bits=>8,vendor=>Atmel].
 
+ATmega:CPU[arch=>AVR].
+ATmega32::ATmega.
+ATmega64::ATmega.
+ATmega128::ATmega.
+ATmega256::ATmega.
+
 ///////////////////////////////////////////////////////////////////////////
 
 PIC::Architecture[bits=>8,vendor=>Microchip].
@@ -83,6 +89,9 @@ RaspberryPiB::RaspberryPiA[ram=>512,usb=>2,eth=1].
 'RaspberryPiB+'::RaspberryPiB[gpio=>40,usb=>4].
 
 OrangePi::RaspberryPi[cpu=>Allwinner,vendor=China].
+
+SmartClock::Computer[wearable].
+Pebble::SmartClock[cpu=>STM32F4,os=>RTOS].
 
 ///////////////////////////////////////////////////////////////////////////
 
