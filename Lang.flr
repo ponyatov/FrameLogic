@@ -2,8 +2,8 @@
 
 ProgrammingLanguage :: Language.
 
-C :: {ProgrammingLanguage,Syntax}.	// pure C
-'C++' :: C.							// C++ variants
+C :: {Native,ProgrammingLanguage,Syntax}.	// pure C
+'C++' :: C.									// C++ variants
 
 {JavaScript,Java} :: ProgrammingLanguage [ syntax => C ].
 
@@ -12,7 +12,7 @@ Python :: ProgrammingLanguage.
 Lisp::ProgrammingLanguage.
 {Scheme,Racket}::Lisp.
 
-{SmallTalk,REFAL} :: ProgrammingLanguage [agnostic].
+{Basic,SmallTalk,REFAL} :: ProgrammingLanguage [agnostic].
 
 {JavaScript,HTML,CSS} :: {Frontend,ProgrammingLanguage}.
 {PHP,Python} :: {Backend,ProgrammingLanguage}.
