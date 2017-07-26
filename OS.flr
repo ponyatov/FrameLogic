@@ -64,3 +64,5 @@ JavaVM::Platform.
 Eclipse:{JavaVM,Platform}.
 
 JS::Platform.
+
+NET::Platform [ os=>Windows ].
