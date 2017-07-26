@@ -20,10 +20,6 @@ QNX::{UNIX,RTOS}.
 FreeRTOS::RTOS.
 Symbian::RTOS[mobile].
 
-Platform::OS.
-JavaVM::Platform.
-Eclipse:{JavaVM,Platform}.
-
 // Linux distro variants
 
 {Debian,Ubuntu::Debian,Fedora,SuSE,RedHat,Angstrom,LFS}::Linux.
@@ -60,3 +56,11 @@ GTK::Framework[os=>Big3].
 {libGTK,'GTK+'}::GTK.
 
 {GNOME,KDE,FLTK,XWindow}::Framework[os=UNIX].
+
+// SW platforms
+
+Platform::OS.
+JavaVM::Platform.
+Eclipse:{JavaVM,Platform}.
+
+JS::Platform.

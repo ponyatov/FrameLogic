@@ -21,8 +21,8 @@ Cpp :: 'C++'.
 'C++0x'		:: 'C++'.
 'C++11'		:: 'C++'.
 
-gcc:compiler[lang={C,'C++'},vendor=GNU].
-cl:compiler[lang={C,'C++'},vendor=Microsoft].
+gcc:compiler[lang={C,'C++'},vendor=>GNU].
+cl:compiler[lang={C,'C++'},vendor=>Microsoft].
 
 type[char,int,float].
 typemod[signed,unsigned,short,long,array,ptr].
