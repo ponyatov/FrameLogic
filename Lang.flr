@@ -1,18 +1,43 @@
 // programming and format languages
 
+////////////////// programming
+
 ProgrammingLanguage :: Language.
+{Imperative,Declarative,Functional}::Language.
 
-C :: {Native,ProgrammingLanguage,Syntax}.	// pure C
-'C++' :: C.									// C++ variants
+C :: {Native,Imperative,ProgrammingLanguage,Syntax}.	// pure C
+'C++' :: C.												// C++ variants
 
-{JavaScript,Java} :: ProgrammingLanguage [ syntax => C ].
+{JavaScript,Java} :: ProgrammingLanguage [ syntax -> C ].
 
-Python :: ProgrammingLanguage.
+Python :: {Imperative,ProgrammingLanguage}.
 
-Lisp::ProgrammingLanguage.
+Lisp::{Functional,ProgrammingLanguage}.
 {Scheme,Racket}::Lisp.
 
-{Basic,SmallTalk,REFAL} :: ProgrammingLanguage [agnostic].
+{Basic,SmallTalk,REFAL} :: {Imperative,ProgrammingLanguage} [agnostic].
 
-{JavaScript,HTML,CSS} :: {Frontend,ProgrammingLanguage}.
-{PHP,Python} :: {Backend,ProgrammingLanguage}.
+{JavaScript,HTML,CSS} :: {Frontend,Imperative,ProgrammingLanguage}.
+{PHP,Python} :: {Backend,Imperative,ProgrammingLanguage}.
+
+/////////////////// markup
+
+MarkupLanguage :: Language.
+{HTML,CSS,TEX,PDF}::MarkupLanguage.
+
+/////////////////// build script
+
+BuildScript::Language.
+{CMake,Makefile,Autotools}::BuildScript.
+
+/////////////////// knowledge/ontology
+
+{Knowledge,Ontology}::ProgrammingLanguage.
+Flora::Prolog.
+Prolog::Knowledge.
+{OWL,RDF,Triple}::Ontology.
+
+/////////////////// Math processing
+
+MathLanguage::ProgrammingLanguage.
+{Octave,MATLAB,Maxima,Mathematica}::MathLanguage.

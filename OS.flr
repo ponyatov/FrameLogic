@@ -31,13 +31,13 @@ GUILibrary::GraphicsLibrary.
 Framework::{Library,GUILibrary}.
 GameFramework::Framework.
 
-WINAPI::Framework[os=>Windows].
+WINAPI::Framework[os->Windows].
 GDI::WINAPI.
 TWAIN::WINAPI.
 
 Library3D::GameFramework.
-DirectX::Library3D[os=>Windows].
-OpenGL::Library3D[os=>{Windows,Linux}].
+DirectX::Library3D[os->Windows].
+OpenGL::Library3D[os->{Windows,Linux}].
 OpenGLES::OpenGL[mobile].
 
 libc::Library.
@@ -49,10 +49,10 @@ dieltlibc::libc.
 libSDL::GameFramework.
 libSDL2::libSDL.
 
-wxWindows::Framework[os=>Big3].
-Qt::Framework[os=>Big3].
+wxWindows::Framework[os->Big3].
+Qt::Framework[os->Big3].
 libQt::Qt.
-GTK::Framework[os=>Big3].
+GTK::Framework[os->Big3].
 {libGTK,'GTK+'}::GTK.
 
 {GNOME,KDE,FLTK,XWindow}::Framework[os=UNIX].
@@ -65,4 +65,4 @@ Eclipse:{JavaVM,Platform}.
 
 JS::Platform.
 
-NET::Platform [ os=>Windows ].
+NET::Platform [ os->Windows ].
