@@ -20,6 +20,10 @@ QNX::{UNIX,RTOS}.
 FreeRTOS::RTOS.
 Symbian::RTOS[mobile].
 
+Platform::OS.
+JavaVM::Platform.
+Eclipse:{JavaVM,Platform}.
+
 // Linux distro variants
 
 {Debian,Ubuntu::Debian,Fedora,SuSE,RedHat,Angstrom,LFS}::Linux.
